@@ -10,9 +10,15 @@ platforms:
   - name: centos-6.6
   - name: ubuntu-14.04
   - name: ubuntu-15.04
+  - name: debian-8.1
+  - name: debian-8.2
+  - name: debian-7.9
 
 suites:
   - name: default
     run_list:
+      - recipe[zip_common::default]
       - recipe[zip_app::default]
     attributes:
+      tomcat:
+        base_version: 8

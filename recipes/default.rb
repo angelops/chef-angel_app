@@ -24,6 +24,8 @@ when 'ubuntu'
     uri 'ppa:openjdk-r'
     distribution node['lsb']['codename']
   end
+when 'debian'
+  include_recipe 'debian::backports'
 end
 
 include_recipe 'java'
